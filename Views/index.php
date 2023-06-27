@@ -4,9 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
+    <!--
+        - FontAwesome CSS
+        - jQuery
+    -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="/Sistema_de_Cadastro_Clinica_Veterinaria/Script/layout.js"></script>    
+    <script src="/Sistema_Clinica_Veterinaria/Script/layout.js"></script>    
 
     <style>
         :root {
@@ -481,11 +485,17 @@
         <nav class="dashboard-nav-list">
             <a href="#" class="dashboard-nav-item"><i class="fas fa-home"></i> Home </a>
             <a href="#" class="dashboard-nav-item active"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
-            <a href="#" class="dashboard-nav-item"><i class="fas fa-file-upload"></i> Upload </a>
+            
+            <div class='dashboard-nav-dropdown'>
+                <a href="#!" class="dashboard-nav-item dashboard-nav-dropdown-toggle"><i class="fas fa-user"></i> Cliente </a>
+                <div class='dashboard-nav-dropdown-menu'><a href="?page=cadastroCliente" class="dashboard-nav-dropdown-item">Cadastrar Clientes</a>
+                <a href="?page=cadastroCliente" class="dashboard-nav-dropdown-item">Listar Clientes</a>
+                </div>
+            </div>
             <div class='dashboard-nav-dropdown'>
                 <a href="#!" class="dashboard-nav-item dashboard-nav-dropdown-toggle"><i class="fas fa-users"></i> Users </a>
                 <div class='dashboard-nav-dropdown-menu'><a href="#" class="dashboard-nav-dropdown-item">Listar usuário</a>
-                <a href="#" class="dashboard-nav-dropdown-item">Subscribed</a>
+                <a href="?page=cadastroCliente" class="dashboard-nav-dropdown-item">Subscribed</a>
                 <a href="#"class="dashboard-nav-dropdown-item">Cadastrar usuário</a>
                 </div>
             </div>
@@ -499,13 +509,22 @@
             <a href="#" class="dashboard-nav-item"><i class="fas fa-cogs"></i> Settings </a>
             <a href="#" class="dashboard-nav-item"><i class="fas fa-user"></i> Profile </a>
             <div class="nav-item-divider"></div>
-            <a href="#" class="dashboard-nav-item"><i class="fas fa-sign-out-alt"></i> Sair </a>
+            <a href="?page=sair" class="dashboard-nav-item"><i class="fas fa-sign-out-alt"></i> Sair </a>
         </nav>
     </div>
     <div class='dashboard-app'>
-        <header class='dashboard-toolbar'><a href="#!" class="menu-toggle"><i class="fas fa-bars"></i></a></header>
-        <!--  
-            -->
+        <header class='dashboard-toolbar'><a class="menu-toggle"><i class="fas fa-bars"></i></a></header>
+        <!-- Opções -->
+        <?php
+            switch (@$_REQUEST["page"]) {
+            /*--telas--*/
+            case "cadastroCliente":
+                include("Views/clientes/index.php");
+                break;
+            /*--ações--*/
+            
+            }
+        ?>
     </div>
     </div>
 </body>
