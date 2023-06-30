@@ -7,7 +7,7 @@ switch (@$_REQUEST["acao"]) {
         $cpf = $_POST["cpf"];
         $endereco = $_POST["endereco"];
 
-        $sql = "INSERT INTO cliente (nome, nomeAnimal, email, cpf, endereco)
+        $sql = "INSERT INTO cliente (nomeTutor, nomeAnimal, email, cpf, endereco)
                     VALUES (:nome, :nomeAnimal, :email, :cpf, :endereco)";
         
         $stmt = $conn->prepare($sql);
@@ -28,10 +28,10 @@ switch (@$_REQUEST["acao"]) {
             }
         } catch (PDOException $e) {
             echo "<script>alert('Erro ao cadastrar: " . $e->getMessage() . "');</script>";
-        }
+        } 
         break;
     case "excluir":
-
+        
         break;
 }
 ?>
