@@ -8,11 +8,15 @@
         - FontAwesome CSS
         - Bootstrap
         - jQuery
+        - Inputmask.min
     -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="/Sistema_Clinica_Veterinaria/Script/layout.js"></script>    
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
 
     <style>
         :root {
@@ -491,14 +495,22 @@
                 <div class='dashboard-nav-dropdown'>
                     <a href="#!" class="dashboard-nav-item dashboard-nav-dropdown-toggle"><i class="fas fa-user"></i> Cliente </a>
                     <div class='dashboard-nav-dropdown-menu'><a href="?page=cadastroCliente" class="dashboard-nav-dropdown-item">Cadastrar Clientes</a>
-                    <a href="?page=cadastroCliente" class="dashboard-nav-dropdown-item">Listar Clientes</a>
+                    <a href="?page=listarCliente" class="dashboard-nav-dropdown-item">Listar Clientes</a>
                     </div>
                 </div>
                 <div class='dashboard-nav-dropdown'>
-                    <a href="#!" class="dashboard-nav-item dashboard-nav-dropdown-toggle"><i class="fas fa-users"></i> Users </a>
-                    <div class='dashboard-nav-dropdown-menu'><a href="#" class="dashboard-nav-dropdown-item">Listar usuário</a>
-                    <a href="?page=cadastroCliente" class="dashboard-nav-dropdown-item">Subscribed</a>
-                    <a href="#"class="dashboard-nav-dropdown-item">Cadastrar usuário</a>
+                    <a href="#!" class="dashboard-nav-item dashboard-nav-dropdown-toggle"><i class="fas fa-users"></i> Fornecedores </a>
+                    <div class='dashboard-nav-dropdown-menu'><a href="?page=cadastroCliente" class="dashboard-nav-dropdown-item">Cadastrar Fornecedor</a>
+                    <a href="?page=listarCliente" class="dashboard-nav-dropdown-item">Listar Fornecedor</a>
+                    </div>
+                </div>
+                <div class='dashboard-nav-dropdown'>
+                    <a href="#!" class="dashboard-nav-item dashboard-nav-dropdown-toggle"><i class="fas fa-shopping-cart"></i> Produtos </a>
+                    <div class='dashboard-nav-dropdown-menu'>
+                        <a href="?page=cadastrarProduto" class="dashboard-nav-dropdown-item">Cadastrar Produto</a>
+                        <a href="?page=listarProduto" class="dashboard-nav-dropdown-item">Litar Produto</a>
+                        <a href="?page=cadastrarItem" class="dashboard-nav-dropdown-item">Cadastrar Itens</a>
+                        <a href="?page=listarItem" class="dashboard-nav-dropdown-item">Litar Itens</a>
                     </div>
                 </div>
                 <div class='dashboard-nav-dropdown'>
@@ -528,10 +540,31 @@
                 case "listarCliente":
                     include("clientes\listarCliente.php");
                     break;
+                
+                case "cadastrarProduto":
+                    include("item\cadastroProduto.php");
+                    break;
+                case "listarProduto":
+                    include("item\listarProduto.php");
+                    break;
+
+                case "cadastrarItem":
+                    include("item\cadastroItem.php");
+                    break;
+                case "listarItem":
+                    include("item\listarItem.php");
+                    break;
 
                 /*--ações--*/
                 case "clienteAcoes":
                     include("acoes\clienteAcoes.php");
+                    break;
+
+                case "itemAcoes":
+                    include("acoes\itemAcoes.php");
+                    break;
+                case "produtoAcoes":
+                    include("acoes\produtoAcao.php");
                     break;
                 }
             ?>

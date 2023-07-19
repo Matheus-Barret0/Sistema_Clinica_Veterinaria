@@ -12,14 +12,14 @@
             $resultadosPorPagina = 50; //Total de páginas
             $offset = ($paginaAtual - 1) * $resultadosPorPagina;
 
-            $sql = "SELECT nomeTutor, nomeAnimal, cpf FROM cliente LIMIT $offset, $resultadosPorPagina";
+            $sql = "SELECT nomeProduto, quantidadeProduto, dataCadastro FROM itens LIMIT $offset, $resultadosPorPagina";
             $stmt = $conn->query($sql);
 
             print "<br>";
             print "<div class='d-flex justify-content-end'>";
             print "<div class='col-md-5'>";
             print "<div class='input-group'>";
-            print "<input class='form-control' type='text' placeholder='Procure pelo numero de CPF'>";
+            print "<input class='form-control' type='text' placeholder='Procure pelo nome do produto'>";
             print "<div class='input-group-append'>";
             print "<button class='btn btn-outline-success' type='submit'>Pesquisar</button>";
             print "</div>";
@@ -33,30 +33,30 @@
                 print "<table class='table table-hover table-striped table-bordered mt-3'>";
                 print "<tr>";
                 print "<th>#</th>";
-                print "<th>NOME TUTOR</th>";
-                print "<th>NOME ANIMAL</th>";
-                print "<th>CPF</th>";
+                print "<th>NOME PRODUTO</th>";
+                print "<th>QUANTIDADE</th>";
+                print "<th>DATA DE CADASTRO</th>";
                 print "</tr>";
 
                 $index = $offset;
 
                 while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-                    $nomeTutor = $row['nomeTutor'];
-                    $nomeAnimal = $row['nomeAnimal'];
-                    $cpf = $row['cpf'];
-                    $cpfFormatado = substr($cpf, 0, 3) . '.' . substr($cpf, 3, 3) . '.' . substr($cpf, 6, 3) . '-' . substr($cpf, 9, 2);
+                    $nomeProduto = $row['nomeProduto'];
+                    $quantidadeProduto = $row['quantidadeProduto'];
+                    $dataCadastro = $row['dataCadastro'];
+                    $dataFormatada = date("d/m/Y", strtotime($dataCadastro));
 
                     print "<tr>";
                     print "<td>".++$index."</td>";
-                    print "<td>".$nomeTutor."</td>";
-                    print "<td>".$nomeAnimal."</td>";
-                    print "<td>".$cpfFormatado."</td>";
+                    print "<td>".$nomeProduto."</td>";
+                    print "<td>".$quantidadeProduto."</td>";
+                    print "<td>".$dataFormatada."</td>";
                     print "</tr>";
                 }
 
                 print("</table>");
 
-                $sqlCount = "SELECT COUNT(*) as total FROM cliente";
+                $sqlCount = "SELECT COUNT(*) as total FROM produto";
                 $stmtCount = $conn->query($sqlCount);
                 $totalResultados = $stmtCount->fetch(PDO::FETCH_ASSOC)['total'];
                 $totalPaginas = ceil($totalResultados / $resultadosPorPagina);
