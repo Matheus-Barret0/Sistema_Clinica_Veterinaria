@@ -495,13 +495,13 @@
                 <div class='dashboard-nav-dropdown'>
                     <a href="#!" class="dashboard-nav-item dashboard-nav-dropdown-toggle"><i class="fas fa-user"></i> Cliente </a>
                     <div class='dashboard-nav-dropdown-menu'><a href="?page=cadastroCliente" class="dashboard-nav-dropdown-item">Cadastrar Clientes</a>
-                    <a href="?page=listarCliente" class="dashboard-nav-dropdown-item">Listar Clientes</a>
+                        <a href="?page=listarCliente" class="dashboard-nav-dropdown-item">Listar Clientes</a>
                     </div>
                 </div>
                 <div class='dashboard-nav-dropdown'>
                     <a href="#!" class="dashboard-nav-item dashboard-nav-dropdown-toggle"><i class="fas fa-users"></i> Fornecedores </a>
-                    <div class='dashboard-nav-dropdown-menu'><a href="?page=cadastroCliente" class="dashboard-nav-dropdown-item">Cadastrar Fornecedor</a>
-                    <a href="?page=listarCliente" class="dashboard-nav-dropdown-item">Listar Fornecedor</a>
+                    <div class='dashboard-nav-dropdown-menu'><a href="?page=cadastroFornecedor" class="dashboard-nav-dropdown-item">Cadastrar Fornecedor</a>
+                        <a href="?page=listarFornecedor" class="dashboard-nav-dropdown-item">Listar Fornecedor</a>
                     </div>
                 </div>
                 <div class='dashboard-nav-dropdown'>
@@ -514,14 +514,16 @@
                     </div>
                 </div>
                 <div class='dashboard-nav-dropdown'>
-                    <a href="#!"class="dashboard-nav-item dashboard-nav-dropdown-toggle"><i class="fas fa-money-check-alt"></i> Payments </a>
-                    <div class='dashboard-nav-dropdown-menu'><a href="#" class="dashboard-nav-dropdown-item">All</a>
-                        <a href="#" class="dashboard-nav-dropdown-item">Recent</a>
-                        <a href="#" class="dashboard-nav-dropdown-item"> Projections</a>
+                    <a href="#!"class="dashboard-nav-item dashboard-nav-dropdown-toggle"><i class="fas fa-medkit"></i>Consultório </a>
+                    <div class='dashboard-nav-dropdown-menu'>
+                        <a href="?page=cadastroConsultorio" class="dashboard-nav-dropdown-item">Iniciar Consulta</a>
+                        <a href="#" class="dashboard-nav-dropdown-item">Meus Pacientes</a>
+                        <a href="#" class="dashboard-nav-dropdown-item">Em Andamento</a>
+                        <a href="#" class="dashboard-nav-dropdown-item">Finalizadas</a>
                     </div>
                 </div>
-                <a href="#" class="dashboard-nav-item"><i class="fas fa-cogs"></i> Settings </a>
-                <a href="#" class="dashboard-nav-item"><i class="fas fa-user"></i> Profile </a>
+                    <a href="#" class="dashboard-nav-item"><i class="fas fa-cogs"></i> Settings </a>
+                    <a href="#" class="dashboard-nav-item"><i class="fas fa-user"></i> Profile </a>
                 <div class="nav-item-divider"></div>
                 <a href="?page=sair" class="dashboard-nav-item"><i class="fas fa-sign-out-alt"></i> Sair </a>
             </nav>
@@ -535,36 +537,52 @@
                 switch (@$_REQUEST["page"]){
                 /*--telas--*/
                 case "cadastroCliente":
-                    include("clientes\cadastrarCliente.php");
+                    include("clientes/cadastrarCliente.php");
                     break;
                 case "listarCliente":
-                    include("clientes\listarCliente.php");
+                    include("clientes/listarCliente.php");
                     break;
                 
                 case "cadastrarProduto":
-                    include("item\cadastroProduto.php");
+                    include("item/cadastroProduto.php");
                     break;
                 case "listarProduto":
-                    include("item\listarProduto.php");
+                    include("item/listarProduto.php");
                     break;
 
                 case "cadastrarItem":
-                    include("item\cadastroItem.php");
+                    include("item/cadastroItem.php");
                     break;
                 case "listarItem":
-                    include("item\listarItem.php");
+                    include("item/listarItem.php");
+                    break;
+
+                case "cadastroFornecedor":
+                    include("fornecedor/cadastroFornecedor.php");
+                    break;
+                case "listarFornecedor":
+                    include("fornecedor/listarFornecedor.php");
+                    break;
+
+                case "cadastroConsultorio":
+                    include("consultorio/cadastrarConsulta.php");
+                    break;
+                case "pesquisarPaciente":
+                    include("consultorio/pesquisarPaciente.php");
                     break;
 
                 /*--ações--*/
                 case "clienteAcoes":
-                    include("acoes\clienteAcoes.php");
+                    include("acoes/clienteAcoes.php");
                     break;
-
                 case "itemAcoes":
-                    include("acoes\itemAcoes.php");
+                    include("acoes/itemAcoes.php");
                     break;
                 case "produtoAcoes":
-                    include("acoes\produtoAcao.php");
+                    include("acoes/produtoAcao.php");
+                    break;
+                case "fornecedorAcao":
+                    include("acoes/fornecedorAcao.php");
                     break;
                 }
             ?>

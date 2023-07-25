@@ -6,7 +6,10 @@
 
     <?php 
         $sql = "SELECT nomeItem FROM produto";
-        $stmt = $conn->query($sql);
+        $produto = $conn->query($sql);
+
+        $sql = "SELECT nomeEmpresa from fornecedor";
+        $fornecedor = $conn->query($sql);
     ?>
 
 
@@ -24,8 +27,8 @@
                     <select name="produto" class="form-control" required>
                         <option value="">Selecione o produto...</option>
                         <?php 
-                        if ($stmt->rowCount() > 0){
-                            while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
+                        if ($produto->rowCount() > 0){
+                            while ($row = $produto->fetch(PDO::FETCH_ASSOC)){
                                 echo '<option value="' . $row["nomeItem"] . '">' . $row["nomeItem"] . '</option>';
                             }
                         }
@@ -34,7 +37,16 @@
                 </div>  
                 <div class="mb-3">
                     <label>Fornecedor</label>
-                    <input type="text" name="fornecedor" class="form-control" required>
+                    <select name="fornecedor" class="form-control" required>
+                        <option value="">Selecione o fornecedor...</option>
+                        <?php
+                        if ($fornecedor->rowCount() > 0){
+                            while ($row = $fornecedor->fetch(PDO::FETCH_ASSOC)){
+                                echo '<option value="' . $row["nomeEmpresa"] . '">' . $row["nomeEmpresa"] . '</option>';
+                            }
+                        }
+                        ?>
+                    <select>
                 </div>
                 <div class="mb-3">
                     <label>Quantidade</label>

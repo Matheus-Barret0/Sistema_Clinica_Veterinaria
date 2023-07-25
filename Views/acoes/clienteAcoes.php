@@ -6,9 +6,13 @@ switch (@$_REQUEST["acao"]) {
         $email = $_POST["email"];
         $cpf = $_POST["cpf"];
         $endereco = $_POST["endereco"];
+        $dataNascimento = $_POST["dataNascimento"];
+        $sexoAnimal = $_POST["sexoAnimal"];
+        $especie = $_POST["especie"];
+        $pelagem = $_POST["pelagem"];
 
-        $sql = "INSERT INTO cliente (nomeTutor, nomeAnimal, email, cpf, endereco)
-                    VALUES (:nome, :nomeAnimal, :email, :cpf, :endereco)";
+        $sql = "INSERT INTO cliente (nomeTutor, nomeAnimal, email, cpf, endereco, dataNascimento, sexoAnimal, especie, pelagem)
+                    VALUES (:nome, :nomeAnimal, :email, :cpf, :endereco, :dataNascimento, :sexoAnimal, :especie, :pelagem)";
         
         $stmt = $conn->prepare($sql);
         //bindParam vincular um parâmetro a um marcador de parâmetro em uma consulta preparada
@@ -17,6 +21,10 @@ switch (@$_REQUEST["acao"]) {
         $stmt->bindParam(':email', $email);
         $stmt->bindParam(':cpf', $cpf);
         $stmt->bindParam(':endereco', $endereco);
+        $stmt->bindParam(':dataNascimento', $dataNascimento);
+        $stmt->bindParam(':sexoAnimal', $sexoAnimal);
+        $stmt->bindParam(':especie', $especie);
+        $stmt->bindParam(':pelagem', $pelagem);
 
         try {
             $stmt->execute();

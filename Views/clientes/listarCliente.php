@@ -44,16 +44,15 @@
                     $nomeTutor = $row['nomeTutor'];
                     $nomeAnimal = $row['nomeAnimal'];
                     $cpf = $row['cpf'];
-                    $cpfFormatado = substr($cpf, 0, 3) . '.' . substr($cpf, 3, 3) . '.' . substr($cpf, 6, 3) . '-' . substr($cpf, 9, 2);
 
                     print "<tr>";
                     print "<td>".++$index."</td>";
                     print "<td>".$nomeTutor."</td>";
                     print "<td>".$nomeAnimal."</td>";
-                    print "<td>".$cpfFormatado."</td>";
+                    print "<td>".$cpf."</td>";
                     print "</tr>";
                 }
-
+                
                 print("</table>");
 
                 $sqlCount = "SELECT COUNT(*) as total FROM cliente";
