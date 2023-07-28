@@ -95,9 +95,11 @@
                                     <div class="overlay rounded-right"></div>
                                     <div class="account-testimonial">
                                         <h4 class="text-white mb-4">PawsLuck Clinic</h4>
-                                        <p class="lead text-white">“Medir o progresso da programação por linhas de
+                                        <p class="lead text-white">
+                                            “Medir o progresso da programação por linhas de
                                             código é como medir o progresso da construção
-                                            de aeronaves em termos de peso.” </p>
+                                            de aeronaves em termos de peso.” 
+                                        </p>
                                         <p>- Bill Gates</p>
                                     </div>
                                 </div>

@@ -8,7 +8,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $sql = "SELECT id, user_name, password FROM user
         WHERE user_name = :username AND password = :password";
 
-    try {
         $stmt = $conn->prepare($sql);
         $stmt->bindParam(':username', $username);
         $stmt->bindParam(':password', $password);
@@ -29,8 +28,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             // Usuário ou senha incorretos
             $error_message = "Usuário ou senha incorreto.";
         }
-    } catch(PDOException $e) {
-        echo "Erro na consulta: " . $e->getMessage();
-    }
 }
 ?>
