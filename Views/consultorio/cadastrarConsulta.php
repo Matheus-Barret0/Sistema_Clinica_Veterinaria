@@ -18,6 +18,12 @@
     </style>
 </head>
 <body>
+
+    <?php 
+        $sql="SELECT id, nomeCompleto FROM user";
+        $stmt = $conn->query($sql);
+
+    ?>
     <div class="container mt-5">
         <div class="card mx-auto">
             <div class="card-body">
@@ -32,7 +38,7 @@
                         </button>
                     </div>
                 </div>
-                <form id="formulario" action="?page=clienteAcoes" method="POST">
+                <form id="formulario" action="?page=consultorioAcoes" method="POST">
                     <input type="hidden" name="acao" value="cadastrar">
                     <div class="mb-3">
                         <label>Nome Tutor</label>
@@ -57,11 +63,11 @@
                         <ul class="list-inline">
                             <li class="form-check-inline">
                                 <input type="radio" name="viral" class="form-check-input" value="Atualizado" >
-                                <label class="form-check-label" for="sexo-masculino">Atualizado</label>
+                                <label class="form-check-label">Atualizado</label>
                             </li>
                             <li class="form-check-inline">
                                 <input type="radio" name="viral" class="form-check-input" value="Desatualizado">
-                                <label class="form-check-label" for="sexo-feminino">Desatualizado</label>
+                                <label class="form-check-label">Desatualizado</label>
                             </li>
                         </ul>
                     </div>
@@ -71,15 +77,15 @@
                         <ul class="list-inline">
                             <li class="form-check-inline">
                                 <input type="radio" name="antirrabica" class="form-check-input" value="Atualizado" >
-                                <label class="form-check-label" for="sexo-masculino">Atualizado</label>
+                                <label class="form-check-label">Atualizado</label>
                             </li>
                             <li class="form-check-inline">
                                 <input type="radio" name="antirrabica" class="form-check-input" value="Desatualizado">
-                                <label class="form-check-label" for="sexo-feminino">Desatualizado</label>
+                                <label class="form-check-label">Desatualizado</label>
                             </li>
                             <li class="form-check-inline">
                                 <input type="radio" name="antirrabica" class="form-check-input" value="Campanha">
-                                <label class="form-check-label" for="sexo-feminino">Campanha</label>
+                                <label class="form-check-label">Campanha</label>
                             </li>
                         </ul>
                     </div>
@@ -89,15 +95,15 @@
                         <ul class="list-inline">
                             <li class="form-check-inline">
                                 <input type="radio" name="vermifugo" class="form-check-input" value="Atualizado" >
-                                <label class="form-check-label" for="sexo-masculino">Atualizado</label>
+                                <label class="form-check-label">Atualizado</label>
                             </li>
                             <li class="form-check-inline">
                                 <input type="radio" name="vermifugo" class="form-check-input" value="Desatualizado">
-                                <label class="form-check-label" for="sexo-feminino">Desatualizado</label>
+                                <label class="form-check-label">Desatualizado</label>
                             </li>
                             <li class="form-check-inline">
                                 <input type="radio" name="vermifugo" class="form-check-input" value="Campanha">
-                                <label class="form-check-label" for="sexo-feminino">Campanha</label>
+                                <label class="form-check-label">Campanha</label>
                             </li>
                         </ul>
                     </div>
@@ -107,15 +113,15 @@
                         <ul class="list-inline">
                             <li class="form-check-inline">
                                 <input type="radio" name="sistNeurologico" class="form-check-input" value="Mioclonia" >
-                                <label class="form-check-label" for="sexo-masculino">Mioclonia</label>
+                                <label class="form-check-label">Mioclonia</label>
                             </li>
                             <li class="form-check-inline">
                                 <input type="radio" name="sistNeurologico" class="form-check-input" value="Convulsão">
-                                <label class="form-check-label" for="sexo-feminino">Convulsão</label>
+                                <label class="form-check-label">Convulsão</label>
                             </li>
                             <li class="form-check-inline">
                                 <input type="radio" name="sistNeurologico" class="form-check-input" value="Decubito">
-                                <label class="form-check-label" for="sexo-feminino">Decubito</label>
+                                <label class="form-check-label">Decubito</label>
                             </li>
                         </ul>
                     </div>
@@ -125,23 +131,23 @@
                         <ul class="list-inline">
                             <li class="form-check-inline">
                                 <input type="radio" name="sistDigestorio" class="form-check-input" value="Vômito" >
-                                <label class="form-check-label" for="sexo-masculino">Vômito</label>
+                                <label class="form-check-label">Vômito</label>
                             </li>
                             <li class="form-check-inline">
                                 <input type="radio" name="sistDigestorio" class="form-check-input" value="Diarreia">
-                                <label class="form-check-label" for="sexo-feminino">Diarreia</label>
+                                <label class="form-check-label">Diarreia</label>
                             </li>
                             <li class="form-check-inline">
                                 <input type="radio" name="sistDigestorio" class="form-check-input" value="Decubito com Sangue">
-                                <label class="form-check-label" for="sexo-feminino">Diarreia com Sangue</label>
+                                <label class="form-check-label">Diarreia com Sangue</label>
                             </li>
                             <li class="form-check-inline">
                                 <input type="radio" name="sistDigestorio" class="form-check-input" value="Red. Apetite">
-                                <label class="form-check-label" for="sexo-feminino">Red. Apetite</label>
+                                <label class="form-check-label">Red. Apetite</label>
                             </li>
                             <li class="form-check-inline">
                                 <input type="radio" name="sistDigestorio" class="form-check-input" value="Red. Água">
-                                <label class="form-check-label" for="sexo-feminino">Red. Água</label>
+                                <label class="form-check-label">Red. Água</label>
                             </li>
                         </ul>
                     </div>
@@ -151,15 +157,15 @@
                         <ul class="list-inline">
                             <li class="form-check-inline">
                                 <input type="radio" name="sistUrogenital" class="form-check-input" value="Disuria" >
-                                <label class="form-check-label" for="sexo-masculino">Disuria</label>
+                                <label class="form-check-label">Disuria</label>
                             </li>
                             <li class="form-check-inline">
                                 <input type="radio" name="sistUrogenital" class="form-check-input" value="Sec. Vaginal/Peniana">
-                                <label class="form-check-label" for="sexo-feminino">Sec. Vaginal/Peniana</label>
+                                <label class="form-check-label">Sec. Vaginal/Peniana</label>
                             </li>
                             <li class="form-check-inline">
                                 <input type="radio" name="sistUrogenital" class="form-check-input" value="Obstrução">
-                                <label class="form-check-label" for="sexo-feminino">Obstrução</label>
+                                <label class="form-check-label">Obstrução</label>
                             </li>
                         </ul>
                     </div>
@@ -173,11 +179,11 @@
                             </li>
                             <li class="form-check-inline">
                                 <input type="radio" name="sistCardioResp" class="form-check-input" value="Cansaço Respiratório">
-                                <label class="form-check-label" for="sexo-feminino">Cansaço Respiratório</label>
+                                <label class="form-check-label" >Cansaço Respiratório</label>
                             </li>
                             <li class="form-check-inline">
                                 <input type="radio" name="sistCardioResp" class="form-check-input" value="Secreção Nasal">
-                                <label class="form-check-label" for="sexo-feminino">Secreção Nasal</label>
+                                <label class="form-check-label" >Secreção Nasal</label>
                             </li>
                         </ul>
                     </div>
@@ -186,12 +192,12 @@
                         <label class="form-label">Sistema Locomotor:</label>
                         <ul class="list-inline">
                             <li class="form-check-inline">
-                                <input type="radio" name="sistCardioResp" class="form-check-input" value="Fratura" >
-                                <label class="form-check-label" for="sexo-masculino">Fratura</label>
+                                <input type="radio" name="sistLocomotor" class="form-check-input" value="Fratura" >
+                                <label class="form-check-label">Fratura</label>
                             </li>
                             <li class="form-check-inline">
-                                <input type="radio" name="sistUrogenital" class="form-check-input" value="Claudicação">
-                                <label class="form-check-label" for="sexo-feminino">Claudicação</label>
+                                <input type="radio" name="sistLocomotor" class="form-check-input" value="Claudicação">
+                                <label class="form-check-label">Claudicação</label>
                             </li>
                         </ul>
                     </div>
@@ -201,15 +207,15 @@
                         <ul class="list-inline">
                             <li class="form-check-inline">
                                 <input type="radio" name="sistTegumentar" class="form-check-input" value="Alopecia" >
-                                <label class="form-check-label" for="sexo-masculino">Alopecia</label>
+                                <label class="form-check-label">Alopecia</label>
                             </li>
                             <li class="form-check-inline">
                                 <input type="radio" name="sistTegumentar" class="form-check-input" value="Prurido">
-                                <label class="form-check-label" for="sexo-feminino">Prurido</label>
+                                <label class="form-check-label">Prurido</label>
                             </li>
                             <li class="form-check-inline">
                                 <input type="radio" name="sistTegumentar" class="form-check-input" value="Ectoparasitas">
-                                <label class="form-check-label" for="sexo-feminino">Ectoparasitas</label>
+                                <label class="form-check-label">Ectoparasitas</label>
                             </li>
                         </ul>
                     </div>
@@ -219,11 +225,11 @@
                         <ul class="list-inline">
                             <li class="form-check-inline">
                                 <input type="radio" name="sistOcular" class="form-check-input" value="Sec. Ocular" >
-                                <label class="form-check-label" for="sexo-masculino">Sec. Ocular</label>
+                                <label class="form-check-label">Sec. Ocular</label>
                             </li>
                             <li class="form-check-inline">
                                 <input type="radio" name="sistOcular" class="form-check-input" value="Prurido">
-                                <label class="form-check-label" for="sexo-feminino">Prurido</label>
+                                <label class="form-check-label">Prurido</label>
                             </li>
                         </ul>
                     </div>
@@ -233,24 +239,41 @@
                         <ul class="list-inline">
                             <li class="form-check-inline">
                                 <input type="radio" name="sistAuditivo" class="form-check-input" value="Prurido" >
-                                <label class="form-check-label" for="sexo-masculino">Prurido</label>
+                                <label class="form-check-label">Prurido</label>
                             </li>
                             <li class="form-check-inline">
                                 <input type="radio" name="sistAuditivo" class="form-check-input" value="Secreção">
-                                <label class="form-check-label" for="sexo-feminino">Secreção</label>
+                                <label class="form-check-label">Secreção</label>
                             </li>
                             <li class="form-check-inline">
                                 <input type="radio" name="sistAuditivo" class="form-check-input" value="Odor">
-                                <label class="form-check-label" for="sexo-feminino">Odor</label>
+                                <label class="form-check-label">Odor</label>
                             </li>
                             <li class="form-check-inline">
                                 <input type="radio" name="sistAuditivo" class="form-check-input" value="Otomematoma">
-                                <label class="form-check-label" for="sexo-feminino">Otomematoma</label>
+                                <label class="form-check-label">Otomematoma</label>
                             </li>
                         </ul>
                     </div>
+                    <hr class="my-4">
+                    <div class="mb-3">
+                        <h5 class="mb-4">Informações Sobre o Responsável:</h5>
+                        <label>Médico</label>
+                        <select name="responsavel" class="form-control">
+                            <option value=""></option>
+                            <?php
+                                while($row = $stmt->fetch(PDO::FETCH_ASSOC)){
+                                    $id = $row['id'];
+                                    $nomeCompleto = $row['nomeCompleto'];
+                                    echo "<option value=\"" . $id . "\">";
+                                    echo $nomeCompleto;
+                                    echo "</option>";
+                                }
+                            ?>
+                        </select>
+                    </div>
                     <div class="mt-4 d-flex justify-content-center">
-                        <button type="submit" class="btn btn-primary">CADASTRAR</button>
+                        <button type="submit" class="btn btn-primary">INICIAR CONSULTA</button>
                     </div>
                 </form>
             </div>

@@ -1,5 +1,13 @@
 <!DOCTYPE html>
-
+<?php 
+session_start();
+if (!isset($_SESSION['id'])) {
+    // Redirecionar para a página de login, caso o usuário não esteja autenticado
+    header("Location: App\auth.php");
+    exit();
+}
+?>
+?>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -517,13 +525,19 @@
                     <a href="#!"class="dashboard-nav-item dashboard-nav-dropdown-toggle"><i class="fas fa-medkit"></i>Consultório </a>
                     <div class='dashboard-nav-dropdown-menu'>
                         <a href="?page=cadastroConsultorio" class="dashboard-nav-dropdown-item">Iniciar Consulta</a>
-                        <a href="#" class="dashboard-nav-dropdown-item">Meus Pacientes</a>
+                        <a href="?page=pesquisarPaciente" class="dashboard-nav-dropdown-item">Meus Pacientes</a>
                         <a href="#" class="dashboard-nav-dropdown-item">Em Andamento</a>
                         <a href="#" class="dashboard-nav-dropdown-item">Finalizadas</a>
                     </div>
                 </div>
+                <div class='dashboard-nav-dropdown'>
+                    <a href="#!"class="dashboard-nav-item dashboard-nav-dropdown-toggle"><i class="fas fa-user"></i>Usuários</a>
+                    <div class='dashboard-nav-dropdown-menu'>
+                        <a href="?page=cadastroUsuario" class="dashboard-nav-dropdown-item">Cadastrar Usuário</a>
+                        <a href="?page=listarUsuario" class="dashboard-nav-dropdown-item">Listar Usuário</a>
+                    </div>
+                </div>
                     <a href="#" class="dashboard-nav-item"><i class="fas fa-cogs"></i> Settings </a>
-                    <a href="#" class="dashboard-nav-item"><i class="fas fa-user"></i> Profile </a>
                 <div class="nav-item-divider"></div>
                 <a href="?page=sair" class="dashboard-nav-item"><i class="fas fa-sign-out-alt"></i> Sair </a>
             </nav>
@@ -533,6 +547,7 @@
             <!-- Opções -->
             <?php
                 require_once 'C:\xampp\htdocs\Sistema_Clinica_Veterinaria\DataBase\config.php';
+                
 
                 switch (@$_REQUEST["page"]){
                 /*--telas--*/
@@ -568,7 +583,14 @@
                     include("consultorio/cadastrarConsulta.php");
                     break;
                 case "pesquisarPaciente":
-                    include("consultorio/pesquisarPaciente.php");
+                    include("consultorio/pesquisarMeusPaciente.php");
+                    break;
+
+                case "cadastroUsuario":
+                    include("usuarios/cadastrarUsuarios.php");
+                    break;
+                case "listarUsuario":
+                    include("usuarios/listarUsuarios.php");
                     break;
 
                 /*--ações--*/
@@ -583,6 +605,12 @@
                     break;
                 case "fornecedorAcao":
                     include("acoes/fornecedorAcao.php");
+                    break;
+                case "consultorioAcoes":
+                    include("acoes/consultorioAcao.php");
+                    break;
+                case "usuarioAcoes":
+                    include("acoes/usuariosAcoes.php");
                     break;
                 }
             ?>

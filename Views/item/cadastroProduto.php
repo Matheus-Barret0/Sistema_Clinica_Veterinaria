@@ -7,7 +7,7 @@
     <div class="container mt-5">
         <div class="card mx-auto" >
             <div class="card-body">
-            <h3 class="text-center mb-4">CADASTRO DE PRODUTOS</h3>
+            <h3 class="text-center mb-4">CADASTRO DE PRODUTO</h3>
             <form id="formulario" action="?page=produtoAcoes" method="POST">
                 <input type="hidden" name="acao" value="cadastrar">
                 <div class="mb-3">
