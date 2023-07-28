@@ -495,10 +495,11 @@
                     </div>
                 </div>
                 <div class='dashboard-nav-dropdown'>
-                    <a href="#!" class="dashboard-nav-item dashboard-nav-dropdown-toggle"><i class="fas fa-users"></i> Users </a>
-                    <div class='dashboard-nav-dropdown-menu'><a href="#" class="dashboard-nav-dropdown-item">Listar usuário</a>
-                    <a href="?page=cadastroCliente" class="dashboard-nav-dropdown-item">Subscribed</a>
-                    <a href="#"class="dashboard-nav-dropdown-item">Cadastrar usuário</a>
+                    <a href="#!" class="dashboard-nav-item dashboard-nav-dropdown-toggle"><i class="fas fa-users"></i> Itens </a>
+                    <div class='dashboard-nav-dropdown-menu'>
+                        <a href="?page=cadastrarItem" class="dashboard-nav-dropdown-item">Cadastrar Itens</a>
+                        <a href="?page=listarItem" class="dashboard-nav-dropdown-item">Litar Itens</a>
+                        <a href="?page=excluirItem"class="dashboard-nav-dropdown-item">Excluir Itens</a>
                     </div>
                 </div>
                 <div class='dashboard-nav-dropdown'>
@@ -529,9 +530,23 @@
                     include("clientes\listarCliente.php");
                     break;
 
+                case "cadastrarItem":
+                    include("item\cadastroItem.php");
+                    break;
+                case "listarItem":
+                    include("item\listarItem.php");
+                    break;
+                case "excluirItem":
+                    include("item\excluirItem.php");
+                    break;
+
                 /*--ações--*/
                 case "clienteAcoes":
                     include("acoes\clienteAcoes.php");
+                    break;
+
+                case "itemAcoes":
+                    include("acoes\itemAcoes.php");
                     break;
                 }
             ?>
