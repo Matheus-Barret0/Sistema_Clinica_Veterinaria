@@ -62,7 +62,7 @@
                     print "<td>".$especie."</td>";
                     print "<td>".$dataFormatada."</td>";
                     echo "<td>
-                            <a href='?page=excluirUsuario&id=".$id."&acao=excluirUsuario' class='btn btn-success'>Visualizar</a>
+                            <a href='?page=visualizarConsulta&id=".$id."' class='btn btn-success'>Visualizar</a>
                         </td>";
                     print "</tr>";
                 }
