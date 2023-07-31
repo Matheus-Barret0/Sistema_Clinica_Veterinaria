@@ -585,6 +585,9 @@ if (!isset($_SESSION['id'])) {
                 case "pesquisarPaciente":
                     include("consultorio/pesquisarMeusPaciente.php");
                     break;
+                case "visualizarConsulta":
+                    include("consultorio/visualizarProntuario.php");
+                    break;
 
                 case "cadastroUsuario":
                     include("usuarios/cadastrarUsuarios.php");
@@ -592,6 +595,7 @@ if (!isset($_SESSION['id'])) {
                 case "listarUsuario":
                     include("usuarios/listarUsuarios.php");
                     break;
+                
 
                 /*--ações--*/
                 case "clienteAcoes":

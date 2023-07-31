@@ -17,7 +17,7 @@
             try {
                 $stmt->execute();
                 if ($stmt->rowCount() > 0) {
-                    echo "<script>alert('Usuario Cadastrado com Sucesso!');</script>";
+                    echo "<script>alert('Usuario Cadastrado com Sucesso!')</script>";
                     echo "<script>location.href='?page=listarUsuario'</script>";
                 } else {
                     echo "<script>alert('Erro ao Cadastrar');</script>";
