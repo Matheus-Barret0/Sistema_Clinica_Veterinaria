@@ -1,6 +1,6 @@
 # Projeto de CRUD para Clinica Veterinaria
 
-Este é um projeto de CRUD para o gerenciamento do Sistema Clínica Veterinária, composto por vários módulos. Permite a criação, leitura, atualização e exclusão de registros em diferentes áreas
+Este é um projeto de CRUD para o gerenciamento da Clínica Veterinária, composto por vários módulos. Permite a criação, leitura, atualização e exclusão de registros em diferentes áreas
 
 ## Tecnologias Utilizadas
 
